@@ -75,7 +75,7 @@ class Cholac {
             if (!data.currentRoundVote) {
                 await this.lostDogsWayVote(token, value);
             } else {
-                this.log(`${'Voted the card'.green} ${data.currentRoundVote.selectedRoundCardValue} ${'cho'.green} ${data.currentRoundVote.id}`);
+                this.log(`${'Voted the card'.green} ${data.currentRoundVote.selectedRoundCardValue} ${'give'.green} ${data.currentRoundVote.id}`);
                 this.log(`${'Number of bones voted:'.green} ${data.currentRoundVote.spentGameDogsCount}`);
             }
         } catch (error) {
@@ -134,7 +134,7 @@ class Cholac {
 
     async askValue() {
         return new Promise((resolve) => {
-            this.rl.question('Which card do you want to choose by default? (1, 2, 3, hoặc 4): ', (answer) => {
+            this.rl.question('Which card do you want to choose by default? (1, 2, 3, or 4): ', (answer) => {
                 let value;
                 switch (answer.trim()) {
                     case '1':
